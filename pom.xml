@@ -27,6 +27,12 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.zy.alg</groupId>
+            <artifactId>java-alg-infoextra-sdk</artifactId>
+            <version>0.0.4</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
