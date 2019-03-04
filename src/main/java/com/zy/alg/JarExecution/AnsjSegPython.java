@@ -48,7 +48,7 @@ public class AnsjSegPython {
      * @param path the path of user dic
      * @return
      */
-    public static Forest insetUserDic(String path) {
+    public static Forest insertUserDic(String path) {
         Forest userDefineDic = new Forest();
         BufferedReader ar;
         try {
@@ -131,7 +131,7 @@ public class AnsjSegPython {
      * @param type    1-ToAnalysis-distinct 2-ToAnalysis-not distinct 3-indexAnalysis 4-DicAnalysis
      * @return
      */
-    public static List<List<String>> textTokenizer(AnsjSeg ansjSeg, String text, String type,
+    public static List<List<String>> textTokenizerUser(AnsjSeg ansjSeg, String text, String type,
                                                    Forest... userDic) {
         Result terms;
         if (type.equals("4")) {
