@@ -27,7 +27,39 @@ public class LocationPython {
         return pe;
     }
 
+    /**
+     * just area info
+     *
+     * @param pe
+     * @param text
+     * @return
+     */
     public static String getFormatArea(PositionExtraction pe, String text) {
+        List<OutputPosiInfo> posiMap = pe.uniPosiExtra(text);
+        String formatArea = "";
+        int num = 1;
+        for (OutputPosiInfo o : posiMap) {
+            if (num > 1) {
+                formatArea += "#";
+            }
+            // 重庆/直辖市/渝
+            String privince = o.getPositionName().split("&")[0];
+            // 重庆/直辖市
+            String prinvinceNew = privince.split("/")[0] + "/" + privince.split("/")[1];
+            formatArea += o.getPositionName().replace(privince, prinvinceNew);
+            num++;
+        }
+        return formatArea;
+    }
+
+    /**
+     * full info
+     *
+     * @param pe
+     * @param text
+     * @return
+     */
+    public static String areaExtract(PositionExtraction pe, String text) {
         List<OutputPosiInfo> posiMap = pe.uniPosiExtra(text);
         String formatArea = "";
         int num = 1;
